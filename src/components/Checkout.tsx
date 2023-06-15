@@ -12,7 +12,7 @@ const steps = ['Shipping address', 'Payment details'];
 
 export default function Checkout({ cart, error, order, handleCaptureCheckout }: any) {
   const [activeStep, setActiveStep] = useState<number>(0);
-  const [shippingData, setShippingData] = useState<any>({})
+  const [shippingData, setShippingData] = useState<any>({});
   const [checkoutToken, setCheckoutToken] = useState<any>(null);
   const [isFinished, setIsFinished] = useState(false);
   const navigate = useNavigate();

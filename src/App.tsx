@@ -130,9 +130,9 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/react-ecommerce-app">
       <div>
-        <Navbar cartItems={cart.line_items.length} totalItems={cart?.total_items} loading={loading} />
+        <Navbar cartItems={cart?.line_items.length} totalItems={cart?.total_items} loading={loading} />
         <Routes>
           <Route
             path='/'

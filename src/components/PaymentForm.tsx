@@ -1,12 +1,11 @@
 import { Button, Divider, Typography } from "@mui/material";
 import { CardElement, Elements, ElementsConsumer } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import Loading from "./Loading";
 import Review from "./Review";
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
-export default function PaymentForm({ checkoutToken, shippingData, backStep, nextStep, handleCaptureCheckout, timeout }: any) {
+export default function PaymentForm({ checkoutToken, shippingData, backStep, nextStep, handleCaptureCheckout }: any) {
   async function handleSubmit(event: any, elements: any, stripe: any) {
     event.preventDefault();
 
@@ -69,6 +68,7 @@ export default function PaymentForm({ checkoutToken, shippingData, backStep, nex
           {({ elements, stripe }) => (
             <form onSubmit={e => handleSubmit(e, elements, stripe)}>
               <CardElement />
+              <Typography variant='subtitle2' style={{ margin: '20px 0', color: 'red' }}>Please use 4242 4242 4242 4242 as the Card number, 04 / 24 as the expiry date, 242 as the CVC number and 42424 as the ZIP code. *Not an actual transaction.</Typography>
               <br /> <br /> 
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <Button variant='outlined' onClick={backStep}>Back</Button>
