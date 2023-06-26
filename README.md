@@ -1,7 +1,7 @@
 An e-commerce web application where you can add products to cart, change quantities of items and proceed to checkout. Built with commerce.js and stripe.
 
 Notes:
-The application is slow on processing the api requests because it utilizes free testing tiers of chec and stripe.
+The api requests related to commerce.js are very slow because, as of the time of writing this, commerce.js has been abandoned for over a year.
 
 The input fields in the AddressForm component get automatically cleared which is caused by React's StrictMode;
 It causes the useEffect hook that is contained in the Checkout component to run twice (or sometimes even three times),
